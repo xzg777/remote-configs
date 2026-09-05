@@ -5,7 +5,7 @@
 function main(config) {
   // ========== 生效范围：只有命中自建节点才应用 ==========
   const SELF_NODES = [
-    "阿里云中转"
+    "nb-日本"
   ];
 
   const proxies = Array.isArray(config.proxies) ? config.proxies : [];
