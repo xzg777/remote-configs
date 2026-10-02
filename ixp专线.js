@@ -3,7 +3,7 @@ const Compatible_With_Bettbox = { ruleOptionsEnable: true };
 function main(config) {
   if (!config.proxies || !Array.isArray(config.proxies)) return config;
 
-  const targetNodeName = 'hk-专线';
+  const targetNodeName = 'ixp';
   
   // 核心修正：明確指定要完全排除的「黑名單節點名稱」
   const blackListNames = ['移动专线', '沪日专线', targetNodeName];
@@ -59,7 +59,7 @@ function main(config) {
   if (config['proxy-groups'] && Array.isArray(config['proxy-groups'])) {
     
     const newGroup = {
-      name: 'ixp专线',
+      name: 'ixp前置',
       type: 'select', 
       proxies: allowedChainNames
     };
@@ -70,8 +70,8 @@ function main(config) {
       if (group.name === 'PROXY' || group.name === 'GLOBAL') {
         let updatedProxies = [...group.proxies];
         
-        if (!updatedProxies.includes('ixp专线')) {
-          updatedProxies.unshift('ixp专线'); 
+        if (!updatedProxies.includes('ixp前置')) {
+          updatedProxies.unshift('ixp前置'); 
         }
         
         // 確保 DIRECT 永遠排在最前面
