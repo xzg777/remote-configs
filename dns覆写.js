@@ -86,8 +86,8 @@ function main(config) {
   };
 
   // 将 defaultDnsConfig 合并到 config.dns 中。
-  // 因为 ...config.dns 在后面，所以原配置中自带的 nameserver-policy 和 proxy-server-nameserver 会被完美保留。
   config.dns = { ...defaultDnsConfig, ...config.dns };
   // ---------------- DNS 覆写逻辑结束 ----------------
 
-  
+  return config;
+}
